@@ -6,9 +6,21 @@
   roles:
     - vpc
     - ec2
+
+- name: Get Inventory
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
   tasks:
     - name: Refresh inventory
       meta: refresh_inventory
+
+- name: create K8S Cluster
+  hosts: tag_Role_k8s_cluster  
+  become: true
+  roles:
+    - k8s_cluster
 
 #- name: Nginx Instale
 #  hosts: tag_role_cent-web
