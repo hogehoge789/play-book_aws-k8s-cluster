@@ -1,0 +1,11 @@
+---
+- name: Yum update packages
+  yum:
+    name: "*"
+    state: latest
+
+- name: EPEL Repository Install
+  yum:
+    name: epel-release
+    state: present   
+
