@@ -1,11 +1,11 @@
 ---
-- name: create AWS VPC
-  hosts: localhost
-  connection: local
-  gather_facts: False
-  roles:
-    - vpc
-    - ec2
+#- name: create AWS VPC
+#  hosts: localhost
+#  connection: local
+#  gather_facts: False
+#  roles:
+#    - vpc
+#    - ec2
 
 - name: Get Inventory
   hosts: localhost
@@ -16,15 +16,15 @@
     - name: Refresh inventory
       meta: refresh_inventory
 
-- name: create K8S Cluster
-  hosts: tag_Role_k8s_cluster  
-  become: true
-  roles:
-    - k8s_cluster
-
-#- name: Nginx Instale
-#  hosts: tag_role_cent-web
+#- name: create K8S Cluster
+#  hosts: tag_Role_k8s_cluster  
 #  become: true
-#  gather_facts: False
 #  roles:
-#    - nginx
+#    - k8s_cluster
+
+- name: K8S Instale
+  hosts: tag_Role_ubuntu_web
+  become: true
+  gather_facts: False
+  roles:
+    - apt

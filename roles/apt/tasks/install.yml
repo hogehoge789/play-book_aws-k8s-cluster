@@ -1,6 +1,6 @@
 ---
 - name: Software Install
-  yum: 
+  apt: 
     name: "{{ item }}"
-    state: present
+    state: latest
   with_items: "{{ install_name }}"

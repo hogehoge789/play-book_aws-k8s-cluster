@@ -61,3 +61,11 @@ aws:
       - proto: http
         lb_ports: 80
         ec2_ports: 80
+
+install_name:
+ - git
+ - docker.io
+ - kubeadm
+ - kubelet
+ - kubectl
+

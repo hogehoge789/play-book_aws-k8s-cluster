@@ -1,6 +1,0 @@
----
-- name: SE Linux Correspond 
-  yum:
-    name: libselinux-python
-    state: present
-  when: "ansible_os_family == 'RedHat'"
